@@ -80,4 +80,3 @@ Your Name <pannakoota@gmail.com>
 ## ライセンス
 
 このライブラリはフリーソフトウェアです。Perlの同じ条件の下で再配布および修正が可能です。詳細については [PerlのArtisticライセンス](https://dev.perl.org/licenses/artistic.html) を参照してください。
-
