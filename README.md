@@ -1,4 +1,3 @@
-```md
 # Net::LineNotify
 
 `Net::LineNotify` は、LINE Notify APIを使用してLINEに通知を送信するための簡単なPerlモジュールです。このモジュールを使うことで、Perlスクリプトから手軽にLINEへメッセージを送信できます。
