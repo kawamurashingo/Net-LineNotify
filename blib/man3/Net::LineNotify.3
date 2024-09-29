@@ -77,7 +77,7 @@
 .if n .ad l
 .nh
 .SH "NAME"
-Net::LineNotify \- A simple wrapper for LINE Notify API
+Net::LineNotify \- LINE Notify API用の簡単なPerlラッパー
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
 .Vb 1
@@ -88,7 +88,7 @@ Net::LineNotify \- A simple wrapper for LINE Notify API
 .Ve
 .SH "DESCRIPTION"
 .IX Header "DESCRIPTION"
-Net::LineNotify is a simple Perl wrapper for sending notifications via the \s-1LINE\s0 Notify \s-1API.\s0
+\&\f(CW\*(C`Net::LineNotify\*(C'\fRは、LINE Notify APIを使用してLINEアカウントに通知を送信するためのシンプルなPerlモジュールです。
 .SH "METHODS"
 .IX Header "METHODS"
 .SS "new"
@@ -97,18 +97,23 @@ Net::LineNotify is a simple Perl wrapper for sending notifications via the \s-1L
 \&  my $line = Net::LineNotify\->new(access_token => \*(AqYOUR_ACCESS_TOKEN\*(Aq);
 .Ve
 .PP
-Creates a new Net::LineNotify object. Requires an access token for authentication.
+新しい\f(CW\*(C`Net::LineNotify\*(C'\fRオブジェクトを作成します。アクセストークンが必要です。
 .SS "send_message"
 .IX Subsection "send_message"
 .Vb 1
-\&  $line\->send_message(\*(AqHello!\*(Aq);
+\&  $line\->send_message(\*(AqYour message here\*(Aq);
 .Ve
 .PP
-Sends a message to the \s-1LINE\s0 account associated with the access token.
+指定したメッセージをLINEに送信します。送信が成功すれば1を返し、失敗すれば0を返します。
 .SH "AUTHOR"
 .IX Header "AUTHOR"
 Your Name <your.email@example.com>
 .SH "LICENSE"
 .IX Header "LICENSE"
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+このライブラリはフリーソフトウェアです。Perlと同じ条件で再配布および変更が可能です。
+.SH "POD ERRORS"
+.IX Header "POD ERRORS"
+Hey! \fBThe above document had some coding errors, which are explained below:\fR
+.IP "Around line 61:" 4
+.IX Item "Around line 61:"
+Non-ASCII character seen before =encoding in 'API用の簡単なPerlラッパー'. Assuming \s-1UTF\-8\s0

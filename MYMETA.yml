@@ -1,7 +1,7 @@
 ---
 abstract: 'A simple wrapper for LINE Notify API'
 author:
-  - 'Your Name <your.email@example.com>'
+  - 'Kawamura Shingo <pannakoota@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: '0'
 configure_requires:
@@ -20,5 +20,5 @@ no_index:
 requires:
   HTTP::Request::Common: '0'
   LWP::UserAgent: '0'
-version: '0.01'
+version: '0.02'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

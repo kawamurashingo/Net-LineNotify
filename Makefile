@@ -12,7 +12,7 @@
 #   MakeMaker Parameters:
 
 #     ABSTRACT => q[A simple wrapper for LINE Notify API]
-#     AUTHOR => [q[Your Name <your.email@example.com>]]
+#     AUTHOR => [q[Kawamura Shingo <pannakoota@gmail.com>]]
 #     BUILD_REQUIRES => {  }
 #     CONFIGURE_REQUIRES => {  }
 #     NAME => q[Net::LineNotify]
@@ -59,11 +59,11 @@ DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = Net::LineNotify
 NAME_SYM = Net_LineNotify
-VERSION = 0.01
+VERSION = 0.02
 VERSION_MACRO = VERSION
-VERSION_SYM = 0_01
+VERSION_SYM = 0_02
 DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
-XS_VERSION = 0.01
+XS_VERSION = 0.02
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
 INST_ARCHLIB = blib/arch
@@ -260,7 +260,7 @@ RCS_LABEL = rcs -Nv$(VERSION_SYM): -q
 DIST_CP = best
 DIST_DEFAULT = all tardist
 DISTNAME = Net-LineNotify
-DISTVNAME = Net-LineNotify-0.01
+DISTVNAME = Net-LineNotify-0.02
 
 
 # --- MakeMaker macro section:
@@ -486,7 +486,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '---' > META_new.yml
 	$(NOECHO) $(ECHO) 'abstract: '\''A simple wrapper for LINE Notify API'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
-	$(NOECHO) $(ECHO) '  - '\''Your Name <your.email@example.com>'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - '\''Kawamura Shingo <pannakoota@gmail.com>'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
@@ -505,14 +505,14 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) 'requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  HTTP::Request::Common: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) '  LWP::UserAgent: '\''0'\''' >> META_new.yml
-	$(NOECHO) $(ECHO) 'version: '\''0.01'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: '\''0.02'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'x_serialization_backend: '\''CPAN::Meta::YAML version 0.018'\''' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
 	$(NOECHO) $(ECHO) '{' > META_new.json
 	$(NOECHO) $(ECHO) '   "abstract" : "A simple wrapper for LINE Notify API",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "author" : [' >> META_new.json
-	$(NOECHO) $(ECHO) '      "Your Name <your.email@example.com>"' >> META_new.json
+	$(NOECHO) $(ECHO) '      "Kawamura Shingo <pannakoota@gmail.com>"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "dynamic_config" : 1,' >> META_new.json
 	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 7.64, CPAN::Meta::Converter version 2.150010",' >> META_new.json
@@ -549,7 +549,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '      }' >> META_new.json
 	$(NOECHO) $(ECHO) '   },' >> META_new.json
 	$(NOECHO) $(ECHO) '   "release_status" : "stable",' >> META_new.json
-	$(NOECHO) $(ECHO) '   "version" : "0.01",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "0.02",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "x_serialization_backend" : "JSON::PP version 4.07"' >> META_new.json
 	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
@@ -859,9 +859,9 @@ testdb_static :: static pure_all
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) '<SOFTPKG NAME="Net-LineNotify" VERSION="0.01">' > Net-LineNotify.ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="Net-LineNotify" VERSION="0.02">' > Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>A simple wrapper for LINE Notify API</ABSTRACT>' >> Net-LineNotify.ppd
-	$(NOECHO) $(ECHO) '    <AUTHOR>Your Name &lt;your.email@example.com&gt;</AUTHOR>' >> Net-LineNotify.ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR>Kawamura Shingo &lt;pannakoota@gmail.com&gt;</AUTHOR>' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="HTTP::Request::Common" />' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="LWP::UserAgent" />' >> Net-LineNotify.ppd

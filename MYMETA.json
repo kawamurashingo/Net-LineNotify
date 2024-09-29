@@ -1,7 +1,7 @@
 {
    "abstract" : "A simple wrapper for LINE Notify API",
    "author" : [
-      "Your Name <your.email@example.com>"
+      "Kawamura Shingo <pannakoota@gmail.com>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "ExtUtils::MakeMaker version 7.64, CPAN::Meta::Converter version 2.150010",
@@ -38,6 +38,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.01",
+   "version" : "0.02",
    "x_serialization_backend" : "JSON::PP version 4.07"
 }
