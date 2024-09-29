@@ -12,6 +12,7 @@ sub new {
     my ($class, %args) = @_;
     my $self = {
         access_token => $args{access_token},  # アクセストークン
+        test_mode    => $args{test_mode} // 0, # テストモードフラグ
     };
     bless $self, $class;
     return $self;
@@ -20,6 +21,13 @@ sub new {
 # LINE Notifyにメッセージを送信するメソッド
 sub send_message {
     my ($self, $message) = @_;
+
+    # テストモードの場合、リクエストを送信せず成功を返す
+    if ($self->{test_mode}) {
+        warn "テストモード: メッセージ送信は実行されません\n";
+        return 1;
+    }
+
     my $url = 'https://notify-api.line.me/api/notify';
 
     # UserAgentのセットアップ
@@ -67,6 +75,10 @@ Net::LineNotify - LINE Notify API用の簡単なPerlラッパー
   my $line = Net::LineNotify->new(access_token => 'YOUR_ACCESS_TOKEN');
   $line->send_message('Hello from Perl!');
 
+  # テストモード
+  my $line_test = Net::LineNotify->new(access_token => 'dummy_token', test_mode => 1);
+  $line_test->send_message('This will not actually send a message.');
+
 =head1 DESCRIPTION
 
 C<Net::LineNotify>は、LINE Notify APIを使用してLINEアカウントに通知を送信するためのシンプルなPerlモジュールです。
@@ -75,9 +87,9 @@ C<Net::LineNotify>は、LINE Notify APIを使用してLINEアカウントに通�
 
 =head2 new
 
-  my $line = Net::LineNotify->new(access_token => 'YOUR_ACCESS_TOKEN');
+  my $line = Net::LineNotify->new(access_token => 'YOUR_ACCESS_TOKEN', test_mode => 0);
 
-新しいC<Net::LineNotify>オブジェクトを作成します。アクセストークンが必要です。
+新しいC<Net::LineNotify>オブジェクトを作成します。`access_token` は必須です。`test_mode` を有効にすると、実際にリクエストを送信せずに成功の結果を返します。
 
 =head2 send_message
 
@@ -87,7 +99,7 @@ C<Net::LineNotify>は、LINE Notify APIを使用してLINEアカウントに通�
 
 =head1 AUTHOR
 
-Your Name <your.email@example.com>
+Kawamura Shingo <pannakoota@gmail.com>
 
 =head1 LICENSE
 
