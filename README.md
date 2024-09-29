@@ -75,7 +75,7 @@ cpan install LWP::UserAgent HTTP::Request::Common
 
 ## 作者
 
-Your Name <pannakoota@gmail.com>
+Kawamura Shingo <pannakoota@gmail.com>
 
 ## ライセンス
 

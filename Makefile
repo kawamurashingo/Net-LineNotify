@@ -12,7 +12,7 @@
 #   MakeMaker Parameters:
 
 #     ABSTRACT => q[A simple wrapper for LINE Notify API]
-#     AUTHOR => [q[Your Name <your.email@example.com>]]
+#     AUTHOR => [q[Kawamura Shingo <pannakoota@gmail.com>]]
 #     BUILD_REQUIRES => {  }
 #     CONFIGURE_REQUIRES => {  }
 #     NAME => q[Net::LineNotify]
@@ -486,7 +486,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '---' > META_new.yml
 	$(NOECHO) $(ECHO) 'abstract: '\''A simple wrapper for LINE Notify API'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
-	$(NOECHO) $(ECHO) '  - '\''Your Name <your.email@example.com>'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - '\''Kawamura Shingo <pannakoota@gmail.com>'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: '\''0'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
@@ -512,7 +512,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '{' > META_new.json
 	$(NOECHO) $(ECHO) '   "abstract" : "A simple wrapper for LINE Notify API",' >> META_new.json
 	$(NOECHO) $(ECHO) '   "author" : [' >> META_new.json
-	$(NOECHO) $(ECHO) '      "Your Name <your.email@example.com>"' >> META_new.json
+	$(NOECHO) $(ECHO) '      "Kawamura Shingo <pannakoota@gmail.com>"' >> META_new.json
 	$(NOECHO) $(ECHO) '   ],' >> META_new.json
 	$(NOECHO) $(ECHO) '   "dynamic_config" : 1,' >> META_new.json
 	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 7.64, CPAN::Meta::Converter version 2.150010",' >> META_new.json
@@ -861,7 +861,7 @@ testdb_static :: static pure_all
 ppd :
 	$(NOECHO) $(ECHO) '<SOFTPKG NAME="Net-LineNotify" VERSION="0.02">' > Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '    <ABSTRACT>A simple wrapper for LINE Notify API</ABSTRACT>' >> Net-LineNotify.ppd
-	$(NOECHO) $(ECHO) '    <AUTHOR>Your Name &lt;your.email@example.com&gt;</AUTHOR>' >> Net-LineNotify.ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR>Kawamura Shingo &lt;pannakoota@gmail.com&gt;</AUTHOR>' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="HTTP::Request::Common" />' >> Net-LineNotify.ppd
 	$(NOECHO) $(ECHO) '        <REQUIRE NAME="LWP::UserAgent" />' >> Net-LineNotify.ppd

@@ -8,7 +8,7 @@ WriteMakefile(
         'HTTP::Request::Common' => 0,        
     },
     ABSTRACT     => 'A simple wrapper for LINE Notify API',
-    AUTHOR       => 'Your Name <your.email@example.com>',
+    AUTHOR       => 'Kawamura Shingo <pannakoota@gmail.com>',
     dist         => {
         COMPRESS => 'gzip -9f',  # 圧縮コマンド
         SUFFIX   => 'gz',        # 圧縮後のファイル拡張子

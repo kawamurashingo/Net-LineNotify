@@ -1,7 +1,7 @@
 ---
 abstract: 'A simple wrapper for LINE Notify API'
 author:
-  - 'Your Name <your.email@example.com>'
+  - 'Kawamura Shingo <pannakoota@gmail.com>'
 build_requires:
   ExtUtils::MakeMaker: '0'
 configure_requires:
