@@ -1,7 +1,3 @@
-以下に、日本語で記述した `README.md` の例を示します。
-
-### `README.md`
-
 ```md
 # Net::LineNotify
 
