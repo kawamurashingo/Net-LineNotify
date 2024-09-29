@@ -85,6 +85,10 @@ Net::LineNotify \- LINE Notify API用の簡単なPerlラッパー
 \&
 \&  my $line = Net::LineNotify\->new(access_token => \*(AqYOUR_ACCESS_TOKEN\*(Aq);
 \&  $line\->send_message(\*(AqHello from Perl!\*(Aq);
+\&
+\&  # テストモード
+\&  my $line_test = Net::LineNotify\->new(access_token => \*(Aqdummy_token\*(Aq, test_mode => 1);
+\&  $line_test\->send_message(\*(AqThis will not actually send a message.\*(Aq);
 .Ve
 .SH "DESCRIPTION"
 .IX Header "DESCRIPTION"
@@ -94,10 +98,10 @@ Net::LineNotify \- LINE Notify API用の簡単なPerlラッパー
 .SS "new"
 .IX Subsection "new"
 .Vb 1
-\&  my $line = Net::LineNotify\->new(access_token => \*(AqYOUR_ACCESS_TOKEN\*(Aq);
+\&  my $line = Net::LineNotify\->new(access_token => \*(AqYOUR_ACCESS_TOKEN\*(Aq, test_mode => 0);
 .Ve
 .PP
-新しい\f(CW\*(C`Net::LineNotify\*(C'\fRオブジェクトを作成します。アクセストークンが必要です。
+新しい\f(CW\*(C`Net::LineNotify\*(C'\fRオブジェクトを作成します。`access_token` は必須です。`test_mode` を有効にすると、実際にリクエストを送信せずに成功の結果を返します。
 .SS "send_message"
 .IX Subsection "send_message"
 .Vb 1
@@ -107,13 +111,13 @@ Net::LineNotify \- LINE Notify API用の簡単なPerlラッパー
 指定したメッセージをLINEに送信します。送信が成功すれば1を返し、失敗すれば0を返します。
 .SH "AUTHOR"
 .IX Header "AUTHOR"
-Your Name <your.email@example.com>
+Kawamura Shingo <pannakoota@gmail.com>
 .SH "LICENSE"
 .IX Header "LICENSE"
 このライブラリはフリーソフトウェアです。Perlと同じ条件で再配布および変更が可能です。
 .SH "POD ERRORS"
 .IX Header "POD ERRORS"
 Hey! \fBThe above document had some coding errors, which are explained below:\fR
-.IP "Around line 61:" 4
-.IX Item "Around line 61:"
+.IP "Around line 69:" 4
+.IX Item "Around line 69:"
 Non-ASCII character seen before =encoding in 'API用の簡単なPerlラッパー'. Assuming \s-1UTF\-8\s0
