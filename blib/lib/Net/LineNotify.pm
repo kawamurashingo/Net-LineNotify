@@ -5,7 +5,7 @@ use warnings;
 use LWP::UserAgent;
 use HTTP::Request::Common;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 # コンストラクタ
 sub new {
@@ -38,9 +38,16 @@ sub send_message {
     # リクエストを送信し、レスポンスを受け取る
     my $response = $ua->request($req);
 
+    # レスポンスのステータスコードを確認
     if ($response->is_success) {
         return 1;  # 成功
     } else {
+        # ステータスコードに応じてエラーメッセージを表示
+        if ($response->code == 401) {
+            warn "エラー: 認証に失敗しました。アクセストークンが無効です。\n";
+        } else {
+            warn "エラー: " . $response->status_line . "\n";
+        }
         return 0;  # 失敗
     }
 }
@@ -51,7 +58,7 @@ __END__
 
 =head1 NAME
 
-Net::LineNotify - A simple wrapper for LINE Notify API
+Net::LineNotify - LINE Notify API用の簡単なPerlラッパー
 
 =head1 SYNOPSIS
 
@@ -62,7 +69,7 @@ Net::LineNotify - A simple wrapper for LINE Notify API
 
 =head1 DESCRIPTION
 
-Net::LineNotify is a simple Perl wrapper for sending notifications via the LINE Notify API.
+C<Net::LineNotify>は、LINE Notify APIを使用してLINEアカウントに通知を送信するためのシンプルなPerlモジュールです。
 
 =head1 METHODS
 
@@ -70,13 +77,13 @@ Net::LineNotify is a simple Perl wrapper for sending notifications via the LINE 
 
   my $line = Net::LineNotify->new(access_token => 'YOUR_ACCESS_TOKEN');
 
-Creates a new Net::LineNotify object. Requires an access token for authentication.
+新しいC<Net::LineNotify>オブジェクトを作成します。アクセストークンが必要です。
 
 =head2 send_message
 
-  $line->send_message('Hello!');
+  $line->send_message('Your message here');
 
-Sends a message to the LINE account associated with the access token.
+指定したメッセージをLINEに送信します。送信が成功すれば1を返し、失敗すれば0を返します。
 
 =head1 AUTHOR
 
@@ -84,5 +91,5 @@ Your Name <your.email@example.com>
 
 =head1 LICENSE
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+このライブラリはフリーソフトウェアです。Perlと同じ条件で再配布および変更が可能です。
+
